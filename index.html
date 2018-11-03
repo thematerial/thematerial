@@ -1,1 +1,38 @@
-:)
+<pre>
+  <code class="geo-info">
+
+  </code>
+</pre>
+<script>
+
+  const lookupByIp = () => {
+    fetch('https://ipapi.co/json')
+    .then((response) => {
+      return response.json()
+    })
+    .then((inJson) => {
+      return inJson
+    })
+  }
+
+
+  const geoInfo = document.querySelector('.geo-info')
+  const displayGeo = (position) => {
+    const {longtitude, latitude} = position.coords || {}
+    if(!longtitude || !latitude) {
+      lookupByIp()
+    }
+    geoInfo.innerHTML = `longtitude: ${longtitude}, latitude: ${latitude}`
+  }
+
+  lookupByIp()
+
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(displayGeo)
+    const watcher = navigator.geolocation.watchPosition(displayGeo)
+    // navigator.geolocation.clearWatch(watcher)
+  }
+  else {
+    geoInfo.innerHTML = `Awwwww :(`
+  }
+</script>
