@@ -44,6 +44,7 @@ function displayLocationInfo(position) {
 }
 
 function handleLocationError(error) {
+  alert(error.code)
   switch (error.code) {
     case 3:
       // timeout was hit, meaning nothing's in the cache
