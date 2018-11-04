@@ -1,67 +1,75 @@
 
-  <p class="geo-info">
+<p class="geo-info" style="font-size: 33px;">
 
-  </p>
+</p>
 
 <script>
 
-  const lookupByIp = () => fetch('https://ipapi.co/json')
+  const lookupByIP = () => fetch('https://ipapi.co/json')
     .then((response) => {
       return response.json()
     })
     .then((inJson) => {
       return inJson
     })
-  
+
+  const coordsFromIP = {longitude: 0, latitude: 0}
+  setCoordsFromIP = () => {
+    lookupByIP().then(res => {
+      coordsFromIP.longitude = res.longitude
+      coordsFromIP.latitude = res.latitude
+    })
+  }
+  setCoordsFromIP()
+  setInterval(setCoordsFromIP, 10000)
+
   const geoInfo = document.querySelector('.geo-info')
 
+  const options = {
+    enableHighAccuracy: false,
+    timeout: 5000,
+    maximumAge: 0
+  }
+
+  const handleLocationError = (error) => {
+    switch (error.code) {
+      case 3:
+        // timeout was hit, meaning nothing's in the cache
+        // let's provide a default location:
+
+        console.log(' ...... default sjit ?', {coordsFromIP})
+        displayLocationInfo({coords: {...coordsFromIP }}, true)
+
+        // now let's make a non-cached request to get the actual position
+        navigator.geolocation.getCurrentPosition(displayLocationInfo, handleLocationError)
+        break;
+      case 2:
+        // ...
+        break;
+      case 1:
+      // ...
+    }
+  }
+
+  const displayLocationInfo = (position, fromIP = false) => {
+    const lng = position.coords.longitude;
+    const lat = position.coords.latitude;
+    geoInfo.innerHTML = `${fromIP ? '(IP)' : '(GEO)'} longitude: ${lng} | latitude: ${lat}`
+  }
+
   if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(displayGeo)
+    navigator.geolocation.getCurrentPosition(displayLocationInfo, handleLocationError, options)
+    setTimeout(
+      () => {
+        navigator.geolocation.watchPosition(displayLocationInfo, handleLocationError. options)
+      }, 1200
+    )   
     // const watcher = navigator.geolocation.watchPosition(displayGeo)
     // navigator.geolocation.clearWatch(watcher)
   }
   else {
     geoInfo.innerHTML = `Awwwww :(`
+    // setCoordsFromIp() --> timed
   }
-
-  lookupByIp().then(
-    (res) => geoInfo.innerHTML = `(from ip) longitude: ${res.longitude}, latitude: ${res.latitude}`
-  )
-
-
-navigator.geolocation.getCurrentPosition(
-  displayLocationInfo,
-  handleLocationError,
-  { maximumAge: 1500000, timeout: 0 }
-);
-
-function displayLocationInfo(position) {
-  alert('display geo')
-  const lng = position.coords.longitude;
-  const lat = position.coords.latitude;
-
-  geoInfo.innerHTML = `longitude: ${lng} | latitude: ${lat}`
-}
-
-function handleLocationError(error) {
-  alert(error.code)
-  switch (error.code) {
-    case 3:
-      // timeout was hit, meaning nothing's in the cache
-      // let's provide a default location:
-
-      displayLocationInfo({ coords: { longitude: 33.631839, latitude: 27.380583 } })
-
-      // now let's make a non-cached request to get the actual position
-      navigator.geolocation.getCurrentPosition(displayLocationInfo, handleLocationError);
-      break;
-    case 2:
-      // ...
-      break;
-    case 1:
-    // ...
-  }
-}
-
 
 </script>
