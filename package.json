@@ -1,0 +1,27 @@
+{
+  "name": "material-sequence1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0"
+  },
+  "scripts": {
+    "compile": "babel ./src.main.js -o ./docs/compiled.main.js --presets @babel/preset-env --source-maps",
+    "watch": "npm run compile -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kraniebrud/material-sequence1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kraniebrud/material-sequence1/issues"
+  },
+  "homepage": "https://github.com/kraniebrud/material-sequence1#readme"
+}
