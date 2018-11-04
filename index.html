@@ -1,6 +1,6 @@
 
 <p class="geo-info" style="font-size: 33px;">
-
+  ... looking
 </p>
 
 <script>
@@ -26,17 +26,14 @@
   const geoInfo = document.querySelector('.geo-info')
 
   const options = {
-    enableHighAccuracy: false,
-    timeout: 5000,
+    enableHighAccuracy: true,
+    timeout: 10000,
     maximumAge: 0
   }
 
   const handleLocationError = (error) => {
     switch (error.code) {
       case 3:
-        // timeout was hit, meaning nothing's in the cache
-        // let's provide a default location:
-
         console.log(' ...... default sjit ?', {coordsFromIP})
         displayLocationInfo({coords: {...coordsFromIP }}, true)
 
@@ -54,7 +51,8 @@
   const displayLocationInfo = (position, fromIP = false) => {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
-    geoInfo.innerHTML = `${fromIP ? '(IP)' : '(GEO)'} longitude: ${lng} | latitude: ${lat}`
+    const time = new Date().toLocaleTimeString()
+    geoInfo.innerHTML = `${fromIP ? 'IP' : 'GEO)'} <ul><li>longitude: ${lng}</li><li>latitude: ${lat}</li><li>time ${time}</li></ul>`
   }
 
   if(navigator.geolocation) {
