@@ -7,6 +7,9 @@
     fetch('https://thematerial.world/passwordoftheday')
     .then((response) => {
       const pwdoftheday = response.text()
+        .replace('\n')
+        .replace(' ')
+        
       alert( 
         pwd === pwdoftheday ? 'super you got it!' : 'computer says no'
       )
