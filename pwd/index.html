@@ -1,0 +1,12 @@
+<input type="text" id="inputPwd">
+<button onclick="checkPassword()">OK</button>
+<script>
+  const checkPassword = () => {
+    const inputPwd = document.querySelector('#inputPwd')
+    const pwd = inputPwd.value
+    fetch('http://thematerial.world/passwordofhteday')
+    .then((response) => {
+      console.log(response)
+    })
+  }
+</script>
