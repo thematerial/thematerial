@@ -6,7 +6,10 @@
     const pwd = inputPwd.value
     fetch('https://thematerial.world/passwordoftheday')
     .then((response) => {
-      console.log(response)
+      const pwdoftheday = response.text()
+      alert( 
+        pwd === pwdoftheday ? 'super you got it!' : 'computer says no'
+      )
     })
   }
 </script>
