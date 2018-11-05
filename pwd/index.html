@@ -1,18 +1,17 @@
 <input type="text" id="inputPwd">
-<button onclick="checkPassword()">OK</button>
+<button onclick="checkPassword()">Click me</button>
 <script>
   const checkPassword = () => {
     const inputPwd = document.querySelector('#inputPwd')
     const pwd = inputPwd.value
-    fetch('https://thematerial.world/passwordoftheday')
-    .then((response) => {
-      const pwdoftheday = response.text()
-        .replace('\n')
-        .replace(' ')
-        
-      alert( 
-        pwd === pwdoftheday ? 'super you got it!' : 'computer says no'
-      )
+    fetch('https://thematerial.world/passwordoftheday', {cache: "no-cache"})
+    .then((response) => response.text())
+    .then((pwdoftheday) => {
+      const pwdmatch = pwdoftheday
+        .replace('\n', '')
+        .replace(' ', '')
+
+      alert(pwd === pwdmatch ? 'super you got it!' : 'computer says no')
     })
   }
 </script>
