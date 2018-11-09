@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Emil Savas - Facts & Possibilities</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1">
+  <meta name="robots" content="noindex"> 
+  <link rel="stylesheet" type="text/css" media="screen" href="shared/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Lora" rel="stylesheet">
+</head>
+<body class="display-loading">
+  <div id="loading">
+    <span class="loading-bar"></span>
+  </div>
+  <div id="page">
+    <div id="page-inner">
+      <div class="pane">
+        <header class="header">
+          <div class="jitter-dots">
+            <h1>Emil Savas online exhibition</h1>
+            <h2>Facts & Possibilities</h2>
+            <h3>The Material Sequence 1</h3>
+          </div>
+          <footer class="pane-desc">
+            <ul>
+              <li data-da="Der er forskel på, hvordan hjernen fungerer, og hvordan vi oplever, at den fungerer.">
+                There is a difference in how the brain works and how we experience it is functioning.
+              </li>
+              <li data-da="Ethvert værktøj konfigurerer og fremmer et særligt forhold til verden.">
+                Every tool configures and embodies a particular relation with the world.
+              </li>
+              <li data-da="At flyde er en tilstand af fortsættende passivitet.">
+                Floating is a state of continuing passivity.
+              </li>
+              <li data-da="Enhver trussel, der tydeligt ses og konfronteres, mister kraft.">
+                Any threat clearly seen and confronted loses force.
+              </li>
+            </ul>
+          </footer>
+        </header>
+        <section class="pane-section">
+          <ul>
+            <li>
+              <button class="btn-action" type="button" onclick="startSequence()">Start sequence</button>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <main class="main">
+        <footer class="change-language">
+          <ul class="active-language en">
+            <li class="en"><button type="button" class="btn" onclick="setLanguage('en')">en</button></li>
+            <li class="da"><button type="button" class="btn" onclick="setLanguage('da')">da</button></li>
+          </ul>
+        </footer>
+        <article id="material-info">
+          <header class="material-info-header">
+            <h1 data-da="Materialet">Material</h1>
+          </header>
+          <main class="material-content">
+            <div 
+              data-da="
+                &lt;p>
+                  I begyndelsen af foråret 2013 opdagede jeg et betagende materiale. 
+                  Lige siden har det fængslet mig i en uendelig fascination og utallige gange givet anledning til eufori og ekstaser. 
+                  Materialet tillader ingen præcis håndtering, og kræver en overgivelse til dets eget udtryk og omskiftelighed. 
+                  Det konstaterer i sin natur kontrol som noget der foregives, mens dets uberegnelighed uundgåeligt gør processen til en situation, 
+                  hvor der brat og fortsat må tages beslutninger. &lt;br>
+                  &lt;span style=&quot;width: 1.3rem;display: inline-block;&quot;>&lt;/span>Materialet fandt jeg i form af et overskudsprodukt fra malingindustrien. 
+                  Det består af Acomix Tonepasta fra Akzo Nobel tonemaskinesystem, 
+                  og for dem der arbejder med det, er det affald. Acomix Tonepasta beskrives af producenten som et universal pigment koncentrat i pastaform, 
+                  bestående af pigment, stabilisatorer og vand. 
+                  Den anvendes til toning af både alkyd og vandbaserede malinger samt emulsionsmalinger. 
+                  Tonemaskinesystemet arbejder med seksten enkelte pastaer, Phthalo Blue, Blue-Mineral, Phthalo Green, Orange, Red Oxide, 
+                  Red-Organic, Red- Scarlet, Translucent Red, Translucent Yellow, Violet, Magenta, White, Yellow-Oxide, Yellow-Hansa, Yellow-Lemmon og Black. 
+                  Tonemaskinen kalibreres en gang om dagen. &lt;br>
+                  Ved kalibreringen skydes en lille klat af hver enkelt pasta ned i en spand, der manuelt stilles under maskinen. 
+                  Pastaerne blander sig ikke, men flyder som adskilte substanser ind i hinanden. De udskydes i en gentagende rækkefølge, 
+                  og det skaber et punktvist varierende mønster, men den manuelle håndtering af spanden bryder enhver regelmæssighed, 
+                  og når den er fyldt op, ligger pastaerne vilkårligt og lagvis - på den måde opstår Acomix Tonepasta, som et nyt og sammensat materiale,
+                  modelleret og hærdet af dets omgivelser. 
+                &lt;/p>
+              "
+            >
+              <p class="jitter-dots">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id posuere sem. Duis sit amet molestie ligula. Aliquam vitae luctus nunc. 
+                Etiam quis varius nulla. In lectus justo, fermentum tincidunt malesuada sit amet, finibus sit amet orci. 
+                Vivamus eu pretium libero. Nunc laoreet vulputate sem, molestie porta arcu imperdiet et.
+              </p>
+              <p class="jitter-dots">
+                Pellentesque vitae quam et odio bibendum imperdiet. Aenean et egestas sem. Maecenas leo justo, porta at convallis id, fermentum nec tellus. 
+                Maecenas non dui at erat rutrum vulputate sit amet a sapien. 
+                Curabitur blandit, elit sit amet scelerisque faucibus, sapien leo feugiat mauris, quis rutrum ante eros sed nibh. 
+                Cras turpis magna, scelerisque et magna in, varius interdum arcu. Sed vestibulum eleifend quam, eu tincidunt mi. 
+                Vivamus pellentesque erat eget sapien consequat, eu sodales urna interdum. Suspendisse potenti.
+              </p>
+              <p class="jitter-dots">
+                Aenean diam lacus, elementum id scelerisque ut, lacinia dictum sem. Praesent id risus imperdiet velit pulvinar vehicula et eget turpis. 
+                Integer vulputate quam quis lorem ultricies semper. Maecenas lobortis laoreet ornare. 
+                Mauris ipsum nibh, porta sit amet scelerisque vel, pharetra sit amet sem. Etiam et tellus iaculis leo semper sagittis. Morbi vitae sagittis mi. 
+                Proin blandit vitae libero posuere auctor.
+              </p>
+              <p class="jitter-dots">
+                Vivamus vel luctus metus. Sed vitae aliquam elit. Donec sit amet arcu in tellus ultrices rhoncus eget a tortor. In nec tincidunt enim. 
+                Nulla condimentum luctus placerat. Duis a nisl ullamcorper, mattis ligula eu, ullamcorper diam. In fermentum non nulla nec viverra. 
+                Ut sem odio, vehicula non dolor non, pretium fermentum libero. Vestibulum id nulla id orci sagittis rhoncus. 
+                Etiam egestas mauris aliquet mollis dignissim. Integer erat neque, euismod pulvinar nibh eget, congue varius mi.
+              </p>
+            </div>
+            <h3>Teknik</h3>
+            <div 
+              data-da="
+                &lt;p>
+                  Den koncentrerede pigment skal blandes med en binder for at tørre og blive bestandig. 
+                  Med det udgangspunkt, har jeg gennem eksperimenter med de to enheder, opnået et kendskab til materialets opførsel og udfald ved forskellige påvirkninger. 
+                  Efter seks år ser der stadig ud til at være uanede muligheder. 
+                  Det er klart, at jeg opfordrer enhver, der har lyst til at bruge og eksperimentere med Acomix Tonepasta, 
+                  i dets oprindelige eller sammensatte form, til at begynde uden tøven. 
+                  &lt;a href=&quot;&quot; class=&quot;btn&quot; target=&quot;_blank&quot;>Læs sikkerhedsdatablad&lt;/a>
+                &lt;/p>
+              "
+            >
+              <p class="jitter-dots">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id posuere sem. Duis sit amet molestie ligula. Aliquam vitae luctus nunc. 
+                Etiam quis varius nulla. In lectus justo, fermentum tincidunt malesuada sit amet, finibus sit amet orci. 
+                Vivamus eu pretium libero. Nunc laoreet vulputate sem, molestie porta arcu imperdiet et.
+              </p>
+            </div>
+            <h3>Facts & Possibilities - The Material Sequence 1</h3>
+            <div 
+              data-da="
+               &lt;p>
+                Facts & Possibilities er en sekvens bestående af femten selvstændige malerier, der forenes gennem deres forhold til hinanden i rækkefølgen, 
+                og af teknisk anlagte og stadigt formbare stier imellem dem. I online udstillingen er skærmen platform for fremvisningen af fysiske værker. 
+                Det tillægger de traditionelle malerier en digital værdi, der understreger originalernes fremtræden i den fysiske verden.
+                &lt;/p>
+              "
+            >
+              <p class="jitter-dots">
+                Aenean diam lacus, elementum id scelerisque ut, lacinia dictum sem. Praesent id risus imperdiet velit pulvinar vehicula et eget turpis. 
+                Integer vulputate quam quis lorem ultricies semper. Maecenas lobortis laoreet ornare. 
+                Mauris ipsum nibh, porta sit amet scelerisque vel, pharetra sit amet sem. Etiam et tellus iaculis leo semper sagittis. Morbi vitae sagittis mi. 
+                Proin blandit vitae libero posuere auctor.
+              </p>
+            </div>
+          </main>
+        </article>
+      </main>
+    </div>
+  </div>
+  <section id="sequence">
+    <div id="sequence-intro">
+      <div class="pt1">
+        <h1>Emil Savas</h1>
+      </div>
+      <div class="pt2">
+        <h2>Facts & Possibilities</h2>
+        <h3 class="h2">The Material Sequence 1</h3>
+      </div>
+    </div>
+    <section id="dias">
+      <aside id="top-bar">
+        <div class="bar-inner">
+          <div class="image-info">
+            <h1 class="image-title">Image title</h1>
+            <p class="image-details">
+              <span class="image-material">Acrylic</span>
+              <span class="image-dimensions">&mdash; h: 600cm, w: 300cm</span>
+            </p>
+          </div>
+          <div class="image-option">
+            <button class="dias-btn btn-close" type="button" onclick="diasClose()">&times;</button>
+          </div>
+        </div>
+      </aside>
+      <aside id="btn-image-prev-next">
+        <button type="button" onclick="changeImage(-1)" class="dias-btn btn-prev">←</button>
+        <button type="button" onclick="changeImage(+1)" class="dias-btn btn-next">→</button>
+      </aside>
+      <aside id="bottom-bar">
+        <div class="bar-inner">
+          <div class="image-zoom">
+            <input 
+              type="range"
+              onclick="changeZoomLevel(this.value)" 
+              oninput="changeZoomLevel(this.value)" 
+              class="dias-btn" 
+              id="image-zoom-level" 
+              value="1" 
+              min="1" 
+              max="3.33" 
+              step="0.1"
+            >
+          </div>
+        </div>
+      </aside>
+      <div id="image-main">
+        <div tabindex="1" id="image-src">
+          <div id="image-content"></div>
+        </div>
+      </div>
+      <div id="image-provider">
+        <img 
+          title="Machines have skills, humans are capable" 
+          data-dimensions="70X50" 
+          data-material="colorpaste on acryl and masonite" 
+          src="assets/pictures/1machines-have-skills-humans-are-capable.jpg"
+        >
+        <img 
+          title="You are not a nihilist" 
+          data-dimensions="30X40" 
+          data-material="colorpaste and oil pastel on cardboard" 
+          src="assets/pictures/2you-are-not-a-nihilist.jpg"
+        >
+        <img 
+          title="What shines is holy" 
+          data-dimensions="55X45" 
+          data-material="colorpaste and glitter on canvas" 
+          src="assets/pictures/3what-shines-is-holy.jpg"
+        >
+        <img 
+          title="Privacy" 
+          data-dimensions="86X71" 
+          data-material="colorpaste and acrylics on Christa Ohland poster and glass" 
+          src="assets/pictures/4privacy.jpg"
+        >
+        <img 
+          title="VR Tourist" 
+          data-dimensions="72X56" 
+          data-material="colorpaste, acrylics, oil pastel and glitter on Rosina Wachtmeister poster" 
+          src="assets/pictures/5vr-tourist.jpg"
+        >
+        <img 
+          title="Revelations that don't trigger anything, other than revelations about the revelations" 
+          data-dimensions="84X59" 
+          data-material="colorpaste and glitter on David Tindle poster and glass" 
+          src="assets/pictures/6revelations-that-don_t-trigger-anything-other-than-revelations-about-the-revelations.jpg"
+        >
+        <img 
+          title="Passion" 
+          data-dimensions="159X96" 
+          data-material="colorpaste and oil pastel on acryl" 
+          src="assets/pictures/7passion.jpg"
+        >
+        <img 
+          title="Junky Emiritus" 
+          data-dimensions="80X60" 
+          data-material="colorpaste and glitter on masonite and glass" 
+          src="assets/pictures/8junky-emiritus.jpg"
+        >
+        <img 
+          title="merda d'artista" 
+          data-dimensions="52X52" 
+          data-material="colorpaste and glitter on masonite and glass" 
+          src="assets/pictures/9merda-d_artista.jpg"
+        >
+        <img 
+          title="Soldiers" 
+          data-dimensions="159X89" 
+          data-material="colorpaste, glitter, acrylics and oilpastel on acryl" 
+          src="assets/pictures/10soldiers.jpg"
+        >
+        <img 
+          title="Public Sex" 
+          data-dimensions="71X101" 
+          data-material="colorpaste, glitter, acrylics and oil pastel on masonite" 
+          src="assets/pictures/11public-sex.jpg"
+        >
+        <img 
+          title="Fallen" 
+          data-dimensions="100X70" 
+          data-material="colorpaste, glitter and acrylics on Claude Monet poster" 
+          src="assets/pictures/12fallen.jpg"
+        >
+        <img 
+          title="Blinded by the neurons" 
+          data-dimensions="90X120" 
+          data-material="colorpaste and acrylics on Claude Monet poster" 
+          src="assets/pictures/13blinded-by-the-neurons.jpg"
+        >
+        <img 
+          title="My ancestors and descendants for a second" 
+          data-dimensions="100X70" 
+          data-material="colorpaste, glitter and oil pastel on masonite" 
+          src="assets/pictures/14my-ancestors-and-descendants-for-a-second.jpg"
+        >
+        <img 
+          title="AI committing seppuku" 
+          data-dimensions="120x90" 
+          data-material="colorpaste, glitter, acrylics and oil pastel on Claude Monet poster" 
+          src="assets/pictures/15ai-seppuku.jpg"
+        >
+      </div>
+      <footer id="dias-the-end" onclick="diasClose()">
+        <div class="content">
+          <h1>The end</h1>
+          <small>(click anywhere to close)</small>
+        </div>
+      </footer>
+    </section>
+  </section>
+  <div id="acquisition-outro">
+    <p class="acquisition-en">Paintings is the trace after a material's contact with a surface</p>
+    <p class="acquisition-da">Maleri er sporet efter et materiales kontakt med en flade</p>
+  </div>
+  <div id="video-intro">
+    <button type="button" class="btn-close" onclick="videoIntroEnd()">&times;</button>
+    <video id="video-player" autoplay muted>
+      <source src="https://thematerial.github.io/side-loading/intro20.mp4" type="video/mp4">
+    </video>
+  </div>
+  <script src="panzoom.min.js" type="text/javascript"></script>
+  <script src="compiled.main.js" type="text/javascript"></script>
+</body>
+</html>

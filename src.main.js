@@ -12,11 +12,11 @@ const swapScene = ({timer, scene} = {}, callbackFn) => new Promise((resolve) => 
   }, timer || 0)
 )
 
-videoPlayer.addEventListener('timeupdate', videoTimeUpdate = () => {
-  console.log('ywH')
+const videoTimeUpdate = () => {
   swapScene({timer: 0, scene: 'display-video-intro'})
   videoPlayer.removeEventListener('timeupdate', videoTimeUpdate, false)
-})
+}
+videoPlayer.addEventListener('timeupdate', videoTimeUpdate)
 videoPlayer.addEventListener('ended', () => videoIntroEnd())
 
 const videoIntroEnd = () => (
