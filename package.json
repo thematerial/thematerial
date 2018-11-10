@@ -4,9 +4,11 @@
   "description": "The material website",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server",
-    "build": "babel ./src.main.js -o ./public/compiled.main.js --presets @babel/preset-env --source-maps",
-    "watch": "babel ./src.main.js -o ./public/compiled.main.js --presets @babel/preset-env --source-maps --watch",
+    "start": "NODE_ENV=PRODUCTION node ./server",
+    "dev:ip-allow": "NODE_ENV=IP_ALLOW node ./server",
+    "dev:ip-deny": "NODE_ENV=IP_DENY node ./server",
+    "build": "babel ./src --out-dir ./public/compiled --presets @babel/preset-env --source-maps",
+    "watch": "babel ./src --out-dir ./public/compiled --presets @babel/preset-env --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -58,7 +58,7 @@ const diasElem = document.querySelector('#dias')
 const diasBarInnerElems = document.querySelectorAll('#dias .bar-inner')
 const btnImagePrevNextElem = document.querySelector('#btn-image-prev-next')
 const imageElems = diasElem.querySelector('#image-provider').querySelectorAll('img')
-const imageSrcEle = diasElem.querySelector('#image-src')
+const imageSrcEle = diasElem.querySelector('#image-src #image-content')
 const imageMainEle = diasElem.querySelector('#image-main')
 const imageOptionElem = diasElem.querySelector('.image-option')
 const imageTitleTxtElem = diasElem.querySelector('h1.image-title') 
@@ -243,12 +243,6 @@ if(isExhibition) {
   startSequence()
 }
 
-const randNumber = (min, max) => {
-  let num = Math.floor(Math.random() * max)+min
-  return num <= min ? min : num
-}
-
-
 const languageTextElems = document.querySelectorAll('[data-da]')
 for(let langTextElem of languageTextElems) { // must run before jitter create dots, or it will produce 'dot elements' in dataset.en
   langTextElem.dataset.en = langTextElem.innerHTML
@@ -271,43 +265,6 @@ pageElem.addEventListener('scroll', (e) => {
   let styleDisplay =  e.target.scrollTop > 40 ? 'none' : 'block'
   activeLanguageElem.style.display = styleDisplay
 })
-
-const jitterDotElems = document.querySelectorAll('.jitter-dots')
-const createDots = (jdElems = jitterDotElems) => {
-  for(let jdElem of jdElems) {
-    for(let i = 0; i < randNumber(3, 6); i++) {
-      let dotElem = document.createElement('span')
-      dotElem.className = 'dot'
-      jdElem.appendChild(dotElem)
-    }
-  }
-}
-
-const removeDots = () =>  {
-  const dotsInJitterDotsElem = document.querySelectorAll('.jitter-dots .dot')
-  for(let dotElem of dotsInJitterDotsElem) {
-    dotElem.remove()
-  }
-}
-
-const spreadDots = (jdElems = jitterDotElems) => {
-  for(let jdElem of jdElems) {
-    let [maxTop, maxLeft] = [jdElem.clientHeight, jdElem.clientWidth]
-    let dotElems = jdElem.querySelectorAll('.dot')
-    for(let dotElem of dotElems) {
-      // console.log(randNumber(0,1))
-      if(randNumber(0, 3) > 0) { // only move sometimes
-        dotElem.style.top = randNumber(0, maxTop)+'px'
-        dotElem.style.left = randNumber(0, maxLeft)+'px'
-        dotElem.style.padding = randNumber(1, 3)+'px' // dot size
-      }
-    }
-  }
-}
-
-createDots()
-
-setInterval(() => spreadDots(document.querySelectorAll('.jitter-dots')), 2000) // query dots on now to get exacts size if changed since then
 
 const noDownloadYetPrompt = () => alert(
   'Download is not possible until the full release of Facts & Possibilities, January 1, 2019'

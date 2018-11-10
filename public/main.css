@@ -262,7 +262,7 @@ footer.change-language {
 #dias #image-src {
   display: table-row;
   background-size: contain;
-  /* background-image: url('assets/pictures/hornie-the-house-and-garden-monster-for-a-good-mood.jpg'); */
+  /* background-image: url('assets/pictures/1machines-have-skills-humans-are-capable.jpg'); */
   background-repeat: no-repeat;
   background-position: center center;
   cursor: move;
@@ -273,6 +273,10 @@ footer.change-language {
 #dias #image-content {
   display: table-cell;
   vertical-align: middle;
+  background-size: contain;
+  background-image: url('assets/pictures/1machines-have-skills-humans-are-capable.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #dias #image-provider {
   height: 0;
@@ -579,6 +583,9 @@ input[type=range]:focus::-ms-fill-upper {
 @media (max-width: 1000px) {
   #page #page-inner {
     width: 880px;
+  }
+  #page .pane {
+    zoom: 100%;
   }
 }
 @media (max-width: 900px) {
