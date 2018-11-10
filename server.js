@@ -13,8 +13,14 @@ const retrieveIpFromHeaders = (headers) => headers['x-real-ip']
 
 let allowedIp = 'none'
 const fetchAllowedIPAddr = () => {
-  if(NODE_ENV === 'IP_ALLOW') allowedIp = 'any'; return
-  if(NODE_ENV === 'IP_DENY') allowedIp = 'deny'; return
+  if(NODE_ENV && NODE_ENV === 'IP_ALLOW') {
+    allowedIp = 'any'
+    return
+  } 
+  else if(NODE_ENV && NODE_ENV === 'IP_DENY') {
+    allowedIp = 'deny'
+    return
+  }
 
   fetch('https://raw.githubusercontent.com/thematerial/side-loading/master/ip.txt', {cache: "no-cache"})
   .then(response => {
