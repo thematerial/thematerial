@@ -41,7 +41,7 @@ const fetchAllowedIPAddr = () => {
 fetchAllowedIPAddr()
 setInterval(() => fetchAllowedIPAddr(), 480000)
 
-const allowedServe = serveStatic('./public', {index: 'index.html', maxAge: '1d'})
+const allowedServe = serveStatic('./public', {index: 'index.html', maxAge: '10m'})
 const deniedServe = serveStatic('./public', {index: 'denied-ip.html'})
 const onRequest = (req, res) => {
   try {
@@ -51,7 +51,7 @@ const onRequest = (req, res) => {
 
     res.statusCode = requestIpInfo ? 403 : 200
 
-    if(!ipIsMatch) {
+    if(!ipIsMatch && !requestIpInfo) {
       const isAssetPicture = req.url.startsWith('/assets/pictures')
       const isIndexHtml = req.url.startsWith('/index')
       if(isAssetPicture || isIndexHtml) {
@@ -61,10 +61,17 @@ const onRequest = (req, res) => {
       return deniedServe(req, res, finalhandler(req, res))
     }
     else if (requestIpInfo) {
-      return res.end(`
-        Website was requested with IP "${usersIp}" (yours), but is configured to only allow requests from IP "${allowedIp}".
-        Please contact Emil about this incident.
-      `)
+      return res.end(
+        !ipIsMatch 
+        ? `
+            Exhibition website was requested with IP "${usersIp}" (your IP), but exhibition website is configured to only allow requests from IP "${allowedIp}".
+            Please contact Emil about this incident.
+          `
+        : `
+            Your IP is recoqnized as "${usersIp}" and the exhibition website is configured to be availble with the following IP "${allowedIp}".
+            You should be able to see the exhibition www.thematerial.world.
+          `
+      )
     }
     return allowedServe(req, res, finalhandler(req, res))
   }
