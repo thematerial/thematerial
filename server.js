@@ -11,12 +11,13 @@ const retrieveIpFromHeaders = (headers) => headers['x-real-ip']
 
 let allowedIp = 'none'
 const fetchAllowedIPAddr = () => {
-  fetch('https://github.com/thematerial/side-loading/blob/master/ip.txt', {cache: "no-cache"})
+  fetch('https://raw.githubusercontent.com/thematerial/side-loading/master/ip.txt', {cache: "no-cache"})
   .then(response => {
     if(response.status >= 400) reject() // could not be resolved, reject into catch where any will be allowed
     return response.text()
   })
   .then(ipAddr => {
+    if(ipAddr.length > 39) reject()
     allowedIp = ipAddr
       .replace('\n', '')
       .replace(' ', '')

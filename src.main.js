@@ -95,30 +95,35 @@ const changeImage = (dest, currIdx = dias.currIdx) => {
   changeZoomLevel(0)
   const nextIdx = currIdx + dest
   btnImagePrevNextElem.querySelector('.btn-prev').disabled = nextIdx <= 0
+  clearTimeout(removeBarInnerActiveTimer)
+  showGUI(false, 3300)
   if(nextIdx < 0) return
-  else if(nextIdx > imageSrcList.length - 1){
+  else if(nextIdx > imageSrcList.length - 1) {
+    dias.currIdx = dias.currIdx >= imageSrcList.length ? dias.currIdx : nextIdx /* 
+      treat "the end" as if was part of image sequence, so add to the dias current idx.
+      when try to skip to next image deny when, reached the end
+    */
     return diasTheEnd(true)
   }
+  diasTheEnd(false)
   const img = imageSrcList[nextIdx]
   dias.currIdx = nextIdx
   imageSrcEle.style.backgroundImage = `url(${img.src})`
   imageTitleTxtElem.innerText = img.title
   imageDimensionsTxtElem.innerText = img.dimensions
   imageMaterialTxtElem.innerText = img.material
-  clearTimeout(removeBarInnerActiveTimer)
-  showGUI(false, 3300)
   pz.moveTo(0,0)
   setTimeout(() => pzArea.focus(), 2200)
 }
 
-const diasTheEnd = (theEnd) => {
-  const diasTheEndElem = diasElem.querySelector('#dias-the-end')
-  if(theEnd) {
-    diasTheEndElem.className="active"
-    setTimeout(() => diasTheEndElem.className="active display-close", 4200)
+const diasTheEnd = (isEnd) => {
+  if(isEnd) {
+    diasElem.className = 'display-dias-the-end'
+    btnImagePrevNextElem.querySelector('.btn-next').disabled = true
   }
   else {
-    diasTheEndElem.className=""
+    diasElem.className = ''
+    btnImagePrevNextElem.querySelector('.btn-next').disabled = false
   }
 }
 
@@ -145,7 +150,6 @@ const hideGUI = () => {
 }
 
 const diasClose = () => {
-  goInFullscreen(diasElem)
   goOutFullscreen(bodyElem)
   swapScene({timer: 0, scene: 'display-page'})
 }
@@ -304,3 +308,7 @@ const spreadDots = (jdElems = jitterDotElems) => {
 createDots()
 
 setInterval(() => spreadDots(document.querySelectorAll('.jitter-dots')), 2000) // query dots on now to get exacts size if changed since then
+
+const noDownloadYetPrompt = () => alert(
+  'Download is not possible until the full release of Facts & Possibilities, January 1, 2019'
+)
