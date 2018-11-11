@@ -56,7 +56,9 @@ const onRequest = (req, res) => {
       const isIndexHtml = req.url.startsWith('/index')
       if(isAssetPicture || isIndexHtml) {
         res.statusCode = 403
-        return res.end('This content cannot be displayed at the moment as it is not yet public outside of the exhibition.')
+        return res.end(`
+          This content cannot be displayed at the moment as it is not yet public outside of the exhibition.
+        `)
       }
       return deniedServe(req, res, finalhandler(req, res))
     }
@@ -64,11 +66,11 @@ const onRequest = (req, res) => {
       return res.end(
         !ipIsMatch 
         ? `
-            Exhibition website was requested with IP "${usersIp}" (your IP), but exhibition website is configured to only allow requests from IP "${allowedIp}".
-            Please contact Emil about this incident.
+            Exhibition website was requested with IP "${usersIp}" (your IP), but exhibition website allows only requests from IP "${allowedIp}".
+            Please call Emil about this incident, +45 42 70 45 07.
           `
         : `
-            Your IP is recoqnized as "${usersIp}" and the exhibition website is configured to be availble with the following IP "${allowedIp}".
+            Your IP is recoqnized as "${usersIp}" and the exhibition website is configured to be available with the following IP "${allowedIp}".
             You should be able to see the exhibition www.thematerial.world.
           `
       )
