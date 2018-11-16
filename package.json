@@ -10,7 +10,7 @@
     "now:deploy-team": "now -T thematerial",
     "now:deploy": "now",
     "build": "babel ./src --out-dir ./public/compiled --presets @babel/preset-env --source-maps",
-    "watch": "babel ./src --out-dir ./public/compiled --presets @babel/preset-env --source-maps",
+    "watch": "babel ./src --out-dir ./public/compiled --watch --presets @babel/preset-env --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

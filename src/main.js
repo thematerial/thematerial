@@ -132,7 +132,7 @@ const showGUI = (event, removeTimer) => {
   clearTimeout(removeBarInnerActiveTimer)
   const isImageContent = event && event.target.id === 'image-content'
   if(isMouseDown == false) {
-    diasBarInnerElems.forEach(ele => ele.className = 'bar-inner active')
+    for(let ele of diasBarInnerElems) ele.className = 'bar-inner active'
     btnImagePrevNextElem.style.display = 'block'
     guiIsShowing = true
   }
@@ -144,7 +144,7 @@ const showGUI = (event, removeTimer) => {
 }
 
 const hideGUI = () => {
-  diasBarInnerElems.forEach(ele => ele.className = 'bar-inner')
+  for(let ele of diasBarInnerElems) ele.className = 'bar-inner'
   btnImagePrevNextElem.style.display = 'none'
   guiIsShowing = false
 }
