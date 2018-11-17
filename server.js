@@ -41,7 +41,7 @@ const fetchAllowedIPAddr = () => {
 fetchAllowedIPAddr()
 setInterval(() => fetchAllowedIPAddr(), 480000)
 
-const allowedServe = serveStatic('./public', {index: 'index.html', maxAge: '10m'})
+const allowedServe = serveStatic('./public', {index: 'index.html', maxAge: '10s'})
 const deniedServe = serveStatic('./public', {index: 'denied-ip.html'})
 const onRequest = (req, res) => {
   try {

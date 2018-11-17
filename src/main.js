@@ -1,4 +1,9 @@
 const isMobile = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)
+const isIeOrEdgeBrowser = () => {
+  let isIE = /*@cc_on!@*/false || !!document.documentMode
+  let isEdge = !isIE && !!window.StyleMedia
+  return isIE || isEdge
+}
 
 const bodyElem = document.querySelector('body')
 const pageElem = bodyElem.querySelector('#page')
@@ -132,7 +137,11 @@ const showGUI = (event, removeTimer) => {
   clearTimeout(removeBarInnerActiveTimer)
   const isImageContent = event && event.target.id === 'image-content'
   if(isMouseDown == false) {
-    for(let ele of diasBarInnerElems) ele.className = 'bar-inner active'
+    // for(let ele of diasBarInnerElems) ele.className = 'bar-inner active'
+    for(let i = 0; i < diasBarInnerElems.length; i++) {
+      let ele = diasBarInnerElems[i]
+      ele.className = 'bar-inner active'
+    }
     btnImagePrevNextElem.style.display = 'block'
     guiIsShowing = true
   }
@@ -144,7 +153,10 @@ const showGUI = (event, removeTimer) => {
 }
 
 const hideGUI = () => {
-  for(let ele of diasBarInnerElems) ele.className = 'bar-inner'
+  for(let i = 0; i < diasBarInnerElems.length; i++) {
+    let ele = diasBarInnerElems[i]
+    ele.className = 'bar-inner'
+  }
   btnImagePrevNextElem.style.display = 'none'
   guiIsShowing = false
 }
@@ -154,6 +166,9 @@ const diasClose = () => {
   swapScene({timer: 0, scene: 'display-page'})
 }
 
+if(isIeOrEdgeBrowser()) {
+  sequenceElem.className = 'ie-or-edge'
+}
 if(!isMobile) {
   diasElem.addEventListener('keydown', (e) => {
     if(e.code == 'Digit0' || e.code == 'Escape') {
@@ -244,17 +259,22 @@ if(isExhibition) {
 }
 
 const languageTextElems = document.querySelectorAll('[data-da]')
-for(let langTextElem of languageTextElems) { // must run before jitter create dots, or it will produce 'dot elements' in dataset.en
+for(let i = 0; i < languageTextElems.length; i++) { // must run before jitter create dots, or it will produce 'dot elements' in dataset.en
+  let langTextElem = languageTextElems[i]
   langTextElem.dataset.en = langTextElem.innerHTML
 }
 
+
 const activeLanguageElem = document.querySelector('.active-language')
 const setLanguage = (lang) => {
-  for(let langTextElem of languageTextElems) {
+  for(let i = 0; i < languageTextElems.length; i++) {
+    let langTextElem = languageTextElems[i]
     activeLanguageElem.className = 'active-language '+lang
     langTextElem.innerHTML = langTextElem.dataset[lang]
-    for(let p of langTextElem.querySelectorAll('p')){
-      p.className="jitter-dots"
+    let paragraphElems = langTextElem.querySelectorAll('p')
+    for(let i = 0; i < paragraphElems.length; i++){
+      let pElem = paragraphElems[i]
+      pElem.className="jitter-dots"
     }
   }
   removeDots()

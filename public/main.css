@@ -284,7 +284,7 @@ footer.change-language {
   overflow: hidden;
 }
 #dias #top-bar, #dias #bottom-bar {
-  background: #000000c2;
+  background: rgba(0, 0, 0, 0.76);
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -297,6 +297,10 @@ footer.change-language {
 #dias #bottom-bar {
   bottom: 0;
   left: 0;
+}
+#sequence.ie-or-edge #dias #bottom-bar {
+  /* Disable zoom in the bottom, as it want work for ie or edge */
+  display: none;
 }
 #dias .bar-inner.active {
   display: block;
@@ -340,6 +344,7 @@ footer.change-language {
   font-size: 24px;
   margin: 0 1rem;
   font-weight: 200;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", Lora, Fira Sans, Roboto, Helvetica, Tahoma, sans-serif;
 }
 #dias .image-zoom {
   width: 60%;

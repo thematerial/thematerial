@@ -4,8 +4,9 @@ const jitterDotsRandNumber = (min, max) => {
 }
 const jitterDotElems = document.querySelectorAll('.jitter-dots')
 const createDots = (jdElems = jitterDotElems) => {
-  for(let jdElem of jdElems) {
-    for(let i = 0; i < jitterDotsRandNumber(3, 6); i++) {
+  for(let i = 0; i < jdElems.length; i++) {
+    let jdElem = jdElems[i]
+    for(let r = 0; r < jitterDotsRandNumber(3, 6); r++) {
       let dotElem = document.createElement('span')
       dotElem.className = 'dot'
       jdElem.appendChild(dotElem)
@@ -15,16 +16,19 @@ const createDots = (jdElems = jitterDotElems) => {
 
 const removeDots = () =>  {
   const dotsInJitterDotsElem = document.querySelectorAll('.jitter-dots .dot')
-  for(let dotElem of dotsInJitterDotsElem) {
+  for(let i = 0; i < dotsInJitterDotsElem.length; i++) {
+    let dotElem = dotsInJitterDotsElem[i]
     dotElem.remove()
   }
 }
 
 const spreadDots = (jdElems = jitterDotElems) => {
-  for(let jdElem of jdElems) {
+  for(let i = 0; i < jdElems.length; i++) {
+    let jdElem = jdElems[i]
     let [maxTop, maxLeft] = [jdElem.clientHeight, jdElem.clientWidth]
     let dotElems = jdElem.querySelectorAll('.dot')
-    for(let dotElem of dotElems) {
+    for(let i = 0; i < dotElems.length; i++) {
+      let dotElem = dotElems[i]
       if(jitterDotsRandNumber(0, 3) > 0) { // only move sometimes
         dotElem.style.top = jitterDotsRandNumber(0, maxTop)+'px'
         dotElem.style.left = jitterDotsRandNumber(0, maxLeft)+'px'
