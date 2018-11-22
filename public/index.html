@@ -322,7 +322,8 @@
   </div>
   <div id="video-intro">
     <button type="button" class="btn-close" onclick="videoIntroEnd()">&times;</button>
-    <video id="video-player" autoplay muted>
+    <button type="button" class="btn-play" onclick="videoIntroPlay()">Start video</button>
+    <video id="video-player" autoplay muted playsinline>
       <source src="https://thematerial.github.io/side-loading/intro20.mp4" type="video/mp4">
     </video>
   </div>

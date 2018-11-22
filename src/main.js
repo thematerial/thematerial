@@ -17,13 +17,16 @@ const swapScene = ({timer, scene} = {}, callbackFn) => new Promise((resolve) => 
   }, timer || 0)
 )
 
-const videoTimeUpdate = () => {
+const videoOnCanPlay = () => {
   swapScene({timer: 0, scene: 'display-video-intro'})
-  videoPlayer.removeEventListener('timeupdate', videoTimeUpdate, false)
+  videoPlayer.removeEventListener('timeupdate', videoOnCanPlay, false) // at times "canplay" does not fire (firefox it occured) check if video time is updated as canplay
+  videoPlayer.removeEventListener('canplay', videoOnCanPlay, false)
 }
-videoPlayer.addEventListener('timeupdate', videoTimeUpdate)
+videoPlayer.addEventListener('timeupdate', videoOnCanPlay)
+videoPlayer.addEventListener('canplay', videoOnCanPlay)
 videoPlayer.addEventListener('ended', () => videoIntroEnd())
 
+const videoIntroPlay = () => videoPlayer.play()
 const videoIntroEnd = () => (
   swapScene({timer: 0, scene: 'display-video-intro display-skip-video-intro display-acquisition'})
   .then(() => swapScene({timer: 2500}, () => videoElem.remove()))
