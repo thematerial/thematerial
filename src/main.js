@@ -17,23 +17,42 @@ const swapScene = ({timer, scene} = {}, callbackFn) => new Promise((resolve) => 
   }, timer || 0)
 )
 
-const videoOnCanPlay = () => {
+const videoIntroOnPlay = () => {
   swapScene({timer: 0, scene: 'display-video-intro'})
-  videoPlayer.removeEventListener('timeupdate', videoOnCanPlay, false) // at times "canplay" does not fire (firefox it occured) check if video time is updated as canplay
+  videoPlayer.removeEventListener('canplay', videoOnCanPlay, false)
+  videoPlayer.removeEventListener('timeupdate', videoIntroOnPlay, false) // discovered that at times "canplay" does not fire (firefox it occured) check if video time is updated as canplay
+}
+
+const videoOnCanPlay = () => {
+  setTimeout(() => {
+    if(videoPlayer.paused) {
+      swapScene({timer: 0, scene: 'display-video-intro display-play-btn'})
+    }
+  }, 100)
   videoPlayer.removeEventListener('canplay', videoOnCanPlay, false)
 }
-videoPlayer.addEventListener('timeupdate', videoOnCanPlay)
+
+const videoIntroPlay = () => videoPlayer.play()
+
+videoPlayer.addEventListener('timeupdate', videoIntroOnPlay)
 videoPlayer.addEventListener('canplay', videoOnCanPlay)
 videoPlayer.addEventListener('ended', () => videoIntroEnd())
 
-const videoIntroPlay = () => videoPlayer.play()
-const videoIntroEnd = () => (
+const destroyVideoTimer = setTimeout(() => {
+  if(videoPlayer.paused) {
+    // if video havent played yet at this time, just end it.
+    videoIntroEnd()
+  }
+}, 20000) // 20000 -- 20 s
+
+const videoIntroEnd = () => {
+  clearTimeout(destroyVideoTimer)
+  videoPlayer.removeEventListener('timeupdate', videoIntroOnPlay, false)
+  videoPlayer.removeEventListener('canplay', videoOnCanPlay, false)
   swapScene({timer: 0, scene: 'display-video-intro display-skip-video-intro display-acquisition'})
   .then(() => swapScene({timer: 2500}, () => videoElem.remove()))
   .then(() => swapScene({timer: 4000, scene: 'display-page'}))
-)
-
-// videoIntroEnd() // <-- remove for video play at start
+}
 
 const sequenceElem = document.querySelector('#sequence')
 const startSequence = () => {
