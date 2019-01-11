@@ -307,7 +307,3 @@ pageElem.addEventListener('scroll', (e) => {
   let styleDisplay =  e.target.scrollTop > 40 ? 'none' : 'block'
   activeLanguageElem.style.display = styleDisplay
 })
-
-const noDownloadYetPrompt = () => alert(
-  'Download is not possible until the full release of Facts & Possibilities, January 1, 2019'
-)
