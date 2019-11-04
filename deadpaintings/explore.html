@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>EXPLORE</title>
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="ldstyle.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300i|Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$('html').addClass('loading-in-progress');
+$(window).on('load',function(){
+  $('html').removeClass('loading-in-progress');
+});
+</script>
+<style>
+.loading-in-progress::before {
+  content: 'Loading Paintings...';
+	position: fixed;
+  color: black;
+  background: white;
+  font-size: 25px;
+  text-align: left;
+  font-family: "Roboto" monospace;
+  -webkit-animation: cray 6s infinite steps(50);
+          animation: cray 6s infinite steps(50);
+  display: inline-block;
+}
+
+.loading-in-progress::after {
+  -webkit-animation: cray 6s infinite steps(50);
+          animation: cray 6s infinite steps(50);
+}
+.loading-in-progress{
+  -webkit-animation: cray 6s infinite steps(50);
+          animation: cray 6s infinite steps(50);
+}
+body{
+  background-image: url(xbags.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: black;
+}
+img{
+  margin-right: 10px;
+}
+p{
+  color: #c749d0;
+  font-size: 30px;
+  line-height: 0.5;
+  font-family: 'roboto', 'arial', 'sans serif';
+  font-style: italic;
+  margin-right: 15px;
+}
+p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14{
+  color: white;
+  line-height: 0.8;
+  font-size: 50px;
+  cursor: pointer;
+  font-family: 'Yanone Kaffeesatz', 'sans-serif';
+  font-style: normal;
+}
+h1{
+  font-family: 'Yanone Kaffeesatz', 'sans-serif';
+  color: white;
+  font-size: 50px;
+  line-height: 0;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 1;
+}
+.ekstra{
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+
+}
+* {
+  box-sizing: border-box;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  width: 100%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+}
+p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14{
+   font-size: 40px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+ }
+body{
+  background: none;
+  background-color: black;
+}
+p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14{
+  font-size: 30px;
+}
+.ekstra{
+  display: none;
+}
+
+   img.e1 {width: 1800px; height: 1424;}
+   img.e2 {width: 1900px; height: 2596;}
+   img.e3 {width: 1800px; height: 1432;}
+   img.e4 {width: 1800px; height: 2453;}
+   img.e5 {width: 1800px; height: 1427;}
+   img.e6 {width: 1800px; height: 1421;}
+   img.e7 {width: 1700px; height: 2324;}
+   img.e8 {width: 2000px; height: 2528;}
+   img.e9 {width: 1800px; height: 1423;}
+   img.e10 {width: 1800px; height: 1426;}
+   img.e11 {width: 1800px; height: 1450;}
+   img.e12 {width: 1800px; height: 2454;}
+   img.e13 {width: 1800px; height: 1423;}
+   img.e14 {width: 1800px; height: 1423;}
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+    <h1 id="h1">X</h1>
+  <p style="text-align:right;"> 120x160cm acomix, acrylics & glitter on masonite
+      <p1 id="p1" onclick="myFunction()">ETERNAL EARTH</p1>
+    </p>
+      <img src="1eternalearth.jpg" id="eternalearth" class="e1"/>
+  <p style="text-align:right;"> 120x90cm acomix & acrylics on masonite
+      <p2 id="p2" onclick="myFunction()">PLASTICLOVE IS TRUE LOVE</p2>
+    </p>
+      <img src="2plastinateplasticloveistruelove.jpg" id="plastic" class="e2"/>
+  <p style="text-align:right;"> 120x160cm acomix, acrylics & glitter on masonite
+      <p3 id="p3" onclick="myFunction()">CHIMERA</p3>
+    </p>
+      <img src="3chimera.jpg" id="chimera" class="e3"/>
+  <p style="text-align:right;"> 120x90cm acomix & acrylics on masonite
+      <p4 id="p4" onclick="myFunction()">ORDER</p4>
+    </p>
+      <img src="4order.jpg" id="order" class="e4"/>
+  <p style="text-align:right;"> 120x160cm acomix & acrylics on masonite
+      <p5 id="p5" onclick="myFunction()">WAR IS ALWAYS THERE, INSIDE AND OUTSIDE</p5>
+    </p>
+      <img src="5wareverywhere.jpg" id="war" class="e5"/>
+  <p style="text-align:right;"> 120x160cm acomix on masonite
+      <p6 id="p6" onclick="myFunction()">ACOMIX</p6>
+    </p>
+      <img src="6acomix.jpg" id="acomix" class="e6"/>
+  <p style="text-align:right;"> 120x90cm acomix & acrylics on masonite
+      <p7 id="p7" onclick="myFunction()">twice.me.1girl</p7>
+    </p>
+      <img src="72ofme1girl.jpg" id="twotimesme" class="e7"/>
+  <p style="text-align:right;"> 160x120cm acomix, acrylics & glitter on masonite
+      <p8 id="p8" onclick="myFunction()">SHE ASK ME TO PISS INSIDE HER</p8>
+    </p>
+      <img src="8sheaskmetopissinsideher.jpg" id="watersports" class="e8"/>
+  <p style="text-align:right;"> 120x160cm acomix & acrylics on masonite
+      <p9 id="p9" onclick="myFunction()">twice.me.1boy</p9>
+    </p>
+      <img src="92ofme1boy.jpg" id="ttmboy" class="e9"/>
+  <p style="text-align:right;"> 120x160cm acomix, acrylics & pastels on masonite
+      <p10 id="p10" onclick="myFunction()">ACOMIX II</p10>
+    </p>
+      <img src="10acomix2.jpg" id="aco2" class="e10"/>
+  <p style="text-align:right;"> 120x160cm acomix & acrylics on masonite
+      <p11 id="p11" onclick="myFunction()">PAREIDOLIA TRAINCAMP</p11>
+    </p>
+      <img src="11pareidoliatraincamp.jpg" id="train" class="e11"/>
+  <p style="text-align:right;"> 120x90cm acomix & glitter on masonite
+      <p12 id="p12" onclick="myFunction()">69SOPLA</p12>
+    </p>
+      <img src="1269sopla.jpg" id="sopla" class="e12"/>
+  <p style="text-align:right;"> 120x160cm acomix, acrylics & pastels on masonite
+      <p13 id="p13" onclick="myFunction()">HAND OF GOD</p13>
+    </p>
+      <img src="13handofgod.jpg" id="god" class="e13"/>
+  <p style="text-align:right;"> 120x160cm acomix & acrylics on masonite
+      <p14 id="p14" onclick="myFunction()">IT IS COMING</p14>
+    </p>
+      <img src="14itscoming.jpg" id="it" class="e14"/>
+  <p class="ekstra" id="ups" onclick="myFunction()">ooo</p>
+  </div>
+</div>
+<script>
+$(document).ready(function(){
+$("img").hide();
+$("h1").hide();
+});
+$(document).ready(function(){
+  $("#p1").click(function(){
+    $("#eternalearth").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+      $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p2").click(function(){
+    $("#plastic").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p3").click(function(){
+    $("#chimera").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p4").click(function(){
+    $("#order").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p5").click(function(){
+    $("#war").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p6").click(function(){
+    $("#acomix").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p7").click(function(){
+    $("#twotimesme").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p8").click(function(){
+    $("#watersports").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p9").click(function(){
+    $("#ttmboy").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p10").click(function(){
+    $("#aco2").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p11").click(function(){
+    $("#train").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p12").click(function(){
+    $("#sopla").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p13").click(function(){
+    $("#god").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#p14").click(function(){
+    $("#it").toggle();
+    $("p").hide();
+    $("h1").show();
+    $(this).css('color', '#c749d0');
+    $('html, body').animate({scrollTop:0},{duration:0});
+  });
+  $("#h1").click(function(){
+    $("img").hide();
+    $("h1").hide();
+    $("p").show();
+    $('html, body').animate({scrollTop:1},{duration:0});
+  });
+  $("#ups").click(function(){
+    $('body').css('background-image','url(bagg1.jpg)');
+    $(this).hide();
+    });
+});
+</script>
+
+</body>
+</html>
