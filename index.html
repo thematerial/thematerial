@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>MATERIAL</title>
+<meta charset="utf-8">
+<meta name="description" content="sequence">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+
+<link rel="stylesheet" type="text/css" href="main.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+</style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-2 online"><h1>ONLINE EXHIBITION</h1></div>
+    <div class="col-2 material"><h2 class="change">THE MATERIAL</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-4 velkommen">
+      <div class="playbox" id="spilfilm" onclick="">
+        <div class="play">
+          <img src="afspil.jpg" class="trekant"/>
+        </div>
+        <video id="film" preload="auto" onclick="">
+        <source src="daisymindre.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" style="text-align:center; margin-top: 4%">
+      <a href="/deadpaintings/dp.html" class="sekvens2">sequence 2</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" style="text-align:center; margin-top: 25px">
+      <a href="sekvens1.html" class="sekvens1">sequence 1</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-2" style="text-align:center;"></div>
+  </div>
+
+
+<script>
+$(document).ready(function(){
+
+  $('#spilfilm').click(function(){
+      film.paused ? film.play() : film.pause();
+    $('#film').attr('playsinline','');
+    $('.trekant').toggle();
+    $('#film')[0].currentTime = 0;
+  });
+
+  $('#film').on('ended',function(){
+    $('.trekant').show();
+  });
+
+  $(".material").click(function (){
+    $(".change").text(($(".change").text() == 'THE MATERIAL') ? 'EMIL SAVAS' : 'THE MATERIAL');
+  });
+  });
+
+
+
+
+
+
+</script>
+</body>
+</html>
