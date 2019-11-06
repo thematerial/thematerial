@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+.col-1 {width: 25%;}
+.col-2 {width: 50%;}
+.col-3 {width: 75%;}
+.col-4 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+h1,h2{
+  display:inline;
+  font-size: 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.material{
+  text-align: right;
+}
+
+.velkommen{
+  text-align: center;
+}
+
+.playbox{
+  position: relative;
+}
+
+.play{
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 42%;
+  width: 15%;
+  height: auto;
+  display: block;
+}
+
+.trekant{
+  cursor: pointer;
+  width: 80%;
+  height: auto;
+}
+
+video{
+  margin-top: 5%;
+  width:50%;
+  height: auto;
+}
+
+a.sekvens2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: black;
+  text-decoration: none;
+  font-size: 60px;
+  text-shadow: 0px 5px 3px rgba(89, 89, 89, 0.80);
+  letter-spacing: 2;
+}
+
+a.sekvens1 {
+  font-family: 'Lato', sans-serif;
+  color: black;
+  text-decoration: none;
+  font-size: 45px;
+}
+
+.change{
+  cursor: default;
+}
+
+
+@media only screen and (max-width: 800px) {
+  [class*="col-"]{
+    width: 50%;
+ }
+
+ .col-4{
+   width: 100%;
+   height: auto;
+ }
+
+ video{
+   margin-top: 3%;
+   width:100%;
+   height: auto;
+ }
+
+ .play{
+   position: absolute;
+   margin-top: 16%;
+   margin-left: 37%;
+   width: 15%;
+   height: auto;
+   display: block;
+ }
+
+ .trekant{
+   cursor: pointer;
+   width: 150%;
+   height: auto;
+ }
+
+
+ @media only screen and (max-width: 550px) {
+   [class*="col-"]{
+     width: 100%;
+  }
+
+  .online{
+    text-align: center;
+    margin-top: 2%;
+  }
+  .material{
+    text-align: center;
+  }
+
+  h1{
+    line-height: 1;
+    display:inline;
+    font-size: 31px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+  }
+
+  h2{
+    line-height: 1;
+    display:inline;
+    font-size: 43px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  video{
+    margin-top: 5%;
+    width:100%;
+    height: auto;
+  }
+
+  .play{
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 31%;
+    width: 15%;
+    height: auto;
+    display: block;
+  }
+
+  .trekant{
+    cursor: pointer;
+    width: 250%;
+    height: auto;
+  }
+
+  a.sekvens2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: black;
+    text-decoration: none;
+    font-size: 55px;
+    text-shadow: 0px 5px 3px rgba(89, 89, 89, 0.80);
+  }
+
+  a.sekvens1 {
+    font-family: 'Lato', sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 40px;
+  }
