@@ -1,52 +1,176 @@
-<!DOCTYPE html>
 <html>
 <head>
-<title>DEAD PAINTINGS</title>
+<title>Material</title>
 <meta charset="utf-8">
-<meta name="description" content="PAINTING">
+<meta name="description" content="sequence">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="dp.css">
+<link rel="stylesheet" type="text/css" href="indexmaterial.css">
 <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 <style>
+* {box-sizing: border-box;}
+
+.moreau{
+  position: relative;
+}
+.kroyer{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: absolute;
+}
+
+.cezanne{
+  width: 100%;
+  position: absolute;
+}
+
+.navn{
+  font-family: Lato;
+  font-size: 28px;
+  margin-top: 5%;
+  margin-bottom: 1px;
+  letter-spacing: 5px;
+}
+
+.titel{
+  font-family: Lato;
+  font-size: 53px;
+  margin-top: -3px;
+  margin-bottom: 150px;
+}
+
+.verden{
+  width: 450px;
+  height: auto;
+  margin-top: 5%;
+  padding-top: 110px
+}
+
+
+.split{
+  font-size: 40px;
+  display: inline-block;
+  position: relative;
+  top: 6px;
+
+}
+
+a.one:link {
+  font-family: Lora;
+  font-size: 26px;
+}
+
+a.one:visited {
+  color: purple;
+}
+
+a.one:hover {
+  background-color: #d1d1e0;
+}
+
+.sek4{
+  font-family: Lora;
+  font-size: 26px;
+  color: #0000EE;
+  display: inline-block;
+}
+
+.Dmaar{
+  width: 44px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  opacity: 0.5;
+}
+
+.Dmaar:hover{
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 805px) {
+
+.verden{
+  width: 400px;
+}
+
+a.one:link {
+  font-size: 20px;
+  background-color: #d1d1e0;
+}
+.sek4{
+  font-size: 20px;
+}
+}
+
+
+@media only screen and (max-width: 650px) {
+
+.navn{
+  margin-top: 20px;
+}
+
+.titel{
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.verden{
+  width: 100%;
+  margin-top: 130px;
+  padding-top: 0px;
+}
+
+.split{
+  font-size: 27px;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  visibility: hidden;
+}
+
+a.one:link {
+  font-size: 22px;
+  background-color: #d1d1e0;
+  margin-left: -14px
+}
+
+.sek4{
+  display: none
+}
+
+.Dmaar{
+  width: 25px;
+}
+}
+
 </style>
 </head>
 <body>
 
-<!--DEATH IS CERTAIN.
-    ALL DEATHS OCCUR NATURALLY.
-    DEATH IS NOT THE FINAL SOLUTION.
-
-    SEQUENCE 2 ORIGINATES FROM THE OTHER SIDE
-    _________________________________________
-
-    THE ONLINE EXHIBITION AND PHYSICAL WORKS
-    WAS MADE IN A FETICHISED APPROACH OF
-    USING TOOLS THAT I DO NOT COMPREHEND.
-
-    EMIL SAVAS //-->
-
-  <div class="row">
-    <div class="col-4 top"></div>
+<div class="moreau">
+<div class="kroyer">
+  <div class="cezanne">
+  <p class="navn">EMIL SAVAS</p>
+  <p class="titel">THE MATERIAL</p>
+  <p class="split">&#124;</p>
+  <a class="one" href="docs/index.html" target="_blank">Facts & Possibilities</a>
+  <p class="split">&#124;</p>
+  <a class="one" href="deadpaintings/dp.html" target="_blank">Dead Paintings</a>
+  <p class="split">&#124;</p>
+  <a class="one" href="threepaintings.html" target="_blank">Three Paintings</a>
+  <p class="split">&#124;</p>
+  <p class="sek4">Sequence 4</p>
+  <p class="split">&#124;</p>
   </div>
-<div class="row">
-  <div class="col-1">
-    <div class="col-4 form">sequence 2</div>
-    <h class="h">DEAD PAINTINGS</h>
-  </div>
-  <div class="col-2 beholder">
-    <div class="col-2">
-      <img src="sonderkfoto11.jpg" alt="" class="sup"/>
-    </div>
-    <div class="col-2" align="center">
-      <div><img src="dead.png" class="deadhead"/></div>
-      <div class="knap1"><a href="explore.html">Explore</a></div>
-      <div class="knap2"><a href="https://drive.google.com/uc?export=download&id=17Vug95NJGeAPb5Jd2rmx8aMDJc5Sk6ZU">Download</a></div>
-  </div>
-</div>
-<div class="col-1">
-  <div class="col-4 form" align="right"></div>
+  <img src="mworlds2.jpg" class="verden">
 </div>
 </div>
+
+<a href="https://www.instagram.com/acomixmaterial/" target="_blank"><img src="insta1.png" class="Dmaar" /></a>
+
+
 </body>
+
 </html>
