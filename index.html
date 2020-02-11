@@ -58,12 +58,13 @@ a.one:visited {
 
 a.one:hover {
   background-color: #d1d1e0;
+  padding-bottom: 5px;
 }
 
 .Dmaar{
   width: 44px;
   height: auto;
-  position: absolute;
+  position: fixed;
   right: 10px;
   bottom: 6px;
   opacity: 0.5;
@@ -72,6 +73,23 @@ a.one:hover {
 .Dmaar:hover{
   opacity: 0.9;
 }
+@media only screen and (max-width: 800px) {
+
+  .titel{
+    margin-bottom: 470px;
+  }
+
+  a.one:link {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+
+  a.one:hover {
+    background: none;
+  }
+}
+
 
 @media only screen and (max-width: 550px) {
 
@@ -103,7 +121,6 @@ a.one:hover {
 
 .Dmaar{
   width: 25px;
-  position: fixed;
 }
 }
 
@@ -118,6 +135,7 @@ a.one:hover {
   <p class="titel">THE MATERIAL</p>
   <a class="one" href="docs/index.html" target="_blank">Facts & Possibilities</a>
   <a class="one" href="deadpaintings/dp.html" target="_blank">Dead Paintings</a>
+  <a class="one" href="threepaintings.html" target="_blank">Three Paintings</a>
   </div>
   <img src="mworlds2.jpg" class="verden">
 </div>
