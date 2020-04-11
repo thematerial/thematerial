@@ -10,6 +10,17 @@
 
 
 <style>
+
+#loading {
+  background-color: white;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
 body{
   background-color: white;
 }
@@ -93,7 +104,12 @@ a:visited {
 </style>
 
 </head>
+<script>
+window.onload = function(){ document.getElementById("loading").style.display = "none" }
+</script>
 <body>
+
+  <div id="loading" class="load"></div>
 
 <div class="box">
     <img src="dodeg.jpg" class="eggers">

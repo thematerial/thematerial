@@ -10,6 +10,17 @@
 
 
 <style>
+
+#loading {
+  background-color: white;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
 body{
   background-image: url('pc.jpg');
   background-size: cover;
@@ -77,7 +88,12 @@ a:visited {
 </style>
 
 </head>
+<script>
+window.onload = function(){ document.getElementById("loading").style.display = "none" }
+</script>
 <body>
+
+  <div id="loading" class="load"></div>
 
 <div onclick="helpme()" id="det" class="detaljer">Details</div>
 
