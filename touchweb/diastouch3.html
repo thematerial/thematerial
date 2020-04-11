@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TOUCH</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+
+
+
+<style>
+body{
+  background-color: white;
+}
+
+.detaljer{
+  font-size: 35px;
+  font-family: Lato, sans serif;
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  color: #ffe6e6;
+  cursor: pointer;
+}
+
+.nielsen{
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  position: fixed;
+  top: 22%;
+  left: 10%;
+}
+
+.videre{
+  text-align: right;
+  width: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 6px;
+}
+
+a{
+  font-family: Lato;
+  font-size: 35px;
+  text-decoration: none;
+  color: #ffe6e6;
+}
+
+a:visited {
+  color: #ffe6e6;
+  text-decoration: none;
+}
+
+.box{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.eggers{
+  max-width: 100%;
+  height: auto;
+}
+
+.titel{
+  width: 75%;
+  height: auto;
+}
+.oeinfo{
+  width:80%;
+}
+@media only screen and (max-width: 600px){
+  .titel{
+    width: 100%;
+    height:auto;
+  }
+  .nielsen{
+    position: fixed;
+    top: 18%;
+    left: 2%;
+  }
+  .oeinfo{
+    width: 96%
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="box">
+    <img src="dodeg.jpg" class="eggers">
+</div>
+
+<div onclick="helpme()" id="det" class="detaljer">Details</div>
+
+
+  <div onclick="hide()" id="in" class="nielsen">
+    <img src="olga.png" class="titel">
+    <img src="oeinfo1.png" class="oeinfo">
+  </div>
+
+
+<div class="videre"><a href="diastouch4.html">Touch</a></div>
+
+
+  <script>
+
+  function helpme() {
+    var x = document.getElementById("in");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  function hide() {
+    var x = document.getElementById("in");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  </script>
+</body>
+</html>
