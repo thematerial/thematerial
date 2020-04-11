@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TOUCH</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+<link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+#loading {
+  background-color: white;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+body{
+  background-color: white;
+}
+
+.detaljer{
+  font-size: 35px;
+  font-family: Lato, sans serif;
+  position: fixed;
+  top: 5px;
+  left: 10px;
+  color: #ffe6e6;
+  cursor: pointer;
+}
+
+.nielsen{
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  position: fixed;
+  top: 27%;
+  left: 12%;
+}
+
+.videre{
+  text-align: right;
+  width: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 6px;
+}
+
+a{
+  font-family: Lato;
+  font-size: 35px;
+  text-decoration: none;
+  color: #ffe6e6;
+}
+
+a:visited {
+  color: #ffe6e6;
+  text-decoration: none;
+}
+
+.box{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.trans{
+  margin-top: 4%;
+  max-width: 60%;
+  height: auto;
+}
+.titel{
+  width: 70%;
+  height: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .trans{
+    margin-top: 0;
+    max-width: 100%;
+    height: auto;
+  }
+  .titel{
+    width: 90%;
+    height: auto;
+  }
+  .nielsen{
+    left: 5%;
+  }
+
+}
+
+
+</style>
+
+</head>
+<script>
+window.onload = function(){ document.getElementById("loading").style.display = "none" }
+</script>
+<body>
+
+  <div id="loading" class="load"></div>
+
+<div class="box">
+    <img src="tf.jpg" class="trans">
+</div>
+
+<div onclick="helpme()" id="det" class="detaljer">Details</div>
+
+
+  <div onclick="hide()" id="in" class="nielsen">
+    <img src="trans.png" class="titel">
+  </div>
+
+
+<div class="videre"><a href="9.html">Touch</a></div>
+
+
+  <script>
+
+  function helpme() {
+    var x = document.getElementById("in");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  function hide() {
+    var x = document.getElementById("in");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
+  </script>
+</body>
+</html>
