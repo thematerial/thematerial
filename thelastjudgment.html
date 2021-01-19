@@ -11,10 +11,22 @@
 
 <style>
 
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
  font-family: Roboto, "Open Sans",  Impact;
+}
+
+#loading {
+  background-color: white;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  color:black;
 }
 
 .dengbej{
@@ -210,9 +222,12 @@ display: none;
 }
 </style>
 </head>
+<script>
+window.onload = function(){ document.getElementById("loading").style.display = "none" }
+</script>
 <body>
 
-
+  <div id="loading">loading...</div>
 
 <div class="dengbej"><img src="am2.png" style="width:14%;height:auto;"></div>
 <div class="ehmedexani"><p class="t"style="margin-top:42%;margin-left:35%;font-size:1.5vw;position:absolute;"> The prefrontal cortex is crucial to our judgement and decision making</p> <p class="bedirxan">watch on desktop</p> <a href="https://youtu.be/COWvzmkEiLA?t=142" target="_blank"><img src="tljbw.gif" alt="the last judgment" class="tlj"></a>
